@@ -1,4 +1,4 @@
-baseURL = 'https:/snprajwal.github.io/'
+baseURL = 'https://snprajwal.github.io'
 title = 'Prajwal S N'
 theme = 'hugo-coder'
 publishDir = 'build'
@@ -6,7 +6,7 @@ publishDir = 'build'
 [params]
 author = 'Prajwal S N'
 info = 'I have an approximate knowledge of most things'
-avatarurl = 'images/snprajwal.jpg'
+avatarurl = '/images/snprajwal.jpg'
 since = 2022
 colorScheme = 'dark'
 
@@ -32,8 +32,8 @@ url = 'mailto:prajwalnadig21@gmail.com'
 
 [[menu.main]]
 name = 'About'
-url = 'about/'
+url = '/about/'
 
 [[menu.main]]
 name = 'Blog'
-url = 'blog/'
+url = '/blog/'
