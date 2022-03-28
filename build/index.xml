@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Prajwal S N</title>
+    <link>https:///snprajwal.github.io/</link>
+    <description>Recent content on Prajwal S N</description>
+    <generator>Hugo -- gohugo.io</generator><atom:link href="https:///snprajwal.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title></title>
+      <link>https:///snprajwal.github.io/blog/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https:///snprajwal.github.io/blog/</guid>
+      <description>*insert cricket noises*
+This page will take some time to come alive :)</description>
+    </item>
+    
+    <item>
+      <title>Who am I?</title>
+      <link>https:///snprajwal.github.io/about/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https:///snprajwal.github.io/about/</guid>
+      <description>To try and answer this in a way that will (hopefully) make you pause for a second before you close this tab is a tedious job, to say the least. But I will do my best.
+I am a distinct potpourri of seemingly random interests and abilities, which nonetheless tie together into a giant connected graph at some obscure level. I am a formally trained Karnatik classical vocalist and mridangam artist.</description>
+    </item>
+    
+  </channel>
+</rss>

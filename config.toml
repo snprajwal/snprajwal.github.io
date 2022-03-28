@@ -1,0 +1,39 @@
+baseURL = 'https:/snprajwal.github.io/'
+title = 'Prajwal S N'
+theme = 'hugo-coder'
+publishDir = 'build'
+
+[params]
+author = 'Prajwal S N'
+info = 'I have an approximate knowledge of most things'
+avatarurl = 'images/snprajwal.jpg'
+since = 2022
+colorScheme = 'dark'
+
+[[params.social]]
+icon = 'fa fa-github fa-2x'
+name = 'GitHub'
+url = 'https://github.com/snprajwal'
+
+[[params.social]]
+icon = 'fa fa-linkedin fa-2x'
+name = 'LinkedIn'
+url = 'https://linkedin.com/in/snprajwal'
+
+[[params.social]]
+icon = 'fa fa-instagram fa-2x'
+name = 'Instagram'
+url = 'https://instagram.com/snprajwal'
+
+[[params.social]]
+icon = 'fa fa-envelope fa-2x'
+name = 'Email'
+url = 'mailto:prajwalnadig21@gmail.com'
+
+[[menu.main]]
+name = 'About'
+url = 'about/'
+
+[[menu.main]]
+name = 'Blog'
+url = 'blog/'
