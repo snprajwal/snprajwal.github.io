@@ -2,10 +2,12 @@ baseURL = 'https://snprajwal.github.io'
 title = 'Prajwal S N'
 theme = 'hugo-coder'
 publishDir = 'build'
+[markup.goldmark.renderer]
+unsafe = true
 
 [params]
 author = 'Prajwal S N'
-info = 'I have an approximate knowledge of most things'
+info = 'Renaissance man'
 avatarurl = '/images/snprajwal.jpg'
 since = 2022
 colorScheme = 'dark'
@@ -31,9 +33,21 @@ name = 'Email'
 url = 'mailto:prajwalnadig21@gmail.com'
 
 [[menu.main]]
+name = 'Résumé'
+url = 'https://drive.google.com/file/d/1rRzWAJOFuwybtldbARxOEqQF_ybrYRx_/view?usp=sharing'
+weight = 1
+
+[[menu.main]]
 name = 'About'
 url = '/about/'
+weight = 2
 
 [[menu.main]]
 name = 'Blog'
 url = '/blog/'
+weight = 3
+
+[[menu.main]]
+name = 'Tech'
+url = '/tech/'
+weight = 4
