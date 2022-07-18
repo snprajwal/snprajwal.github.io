@@ -21,7 +21,7 @@ I began to look into the programme and what it entails in the beginning on 2022.
 A complete record of the work I did can be found in [this pull request](https://github.com/checkpoint-restore/go-criu/pull/66). The implementation itself was very straightforward - figure out the Go equivalent of the existing Python code, and plonk it into a nice set of functions. The more interesting part was designing the library in a way that allowed it to be extensible and usable as both an importable package as well as a CLI application. The complete details can be found in my proposal, and I will not be elaborating on that again here. Instead, I would just like to share the weird gotchas I ran into and the esoteric hacks to fix them.
 
 ## Make galore!
-The first speedbreaker was generating all the `.pb.go` files with the protobuf bindings for all the different image types. Doing this is relatively simple using `protoc` with `protoc-gen-go`, but the catch was that an `option go_package = "the/pkg/path/"` entry was required in every `.proto` file. Since adding this one line into all 73 files in the original `criu` repo was madness, I had to come up with a workaround. `protoc` lets you define the package path as a flag while invoking the command, using `--go_opt=Mpath/to/.proto=the/pkg/path`. All I had to do was write this flag for every single `.proto` file. *ded* ×_×
+The first speedbreaker was generating all the `.pb.go` files with the protobuf bindings for all the different image types. Doing this is relatively simple using `protoc` with `protoc-gen-go`, but the catch was that an `option go_package = "the/pkg/path/"` entry was required in every `.proto` file. Since adding this one line into all 73 files in the original `criu` repo would be madness, I had to come up with a workaround. `protoc` lets you define the package path as a flag while invoking the command, using `--go_opt=Mpath/to/.proto=the/pkg/path`. All I had to do was write this flag for every single `.proto` file. *ded* ×_×
 
 By harnessing the power of GNU Make, I was able to achieve this with just two operations and a few variables :)
 
@@ -40,7 +40,7 @@ Let me explain what is going on here:
     - `patsubst` stands for "pattern substitute". With `proto_files` as the input string, match any pattern (`%`) and replace it with `M%=$(import_path)`, where the `%` refers to the matched pattern.
     - `subst` ignores whitespaces, so `$() $()` is a nifty way to define a whitespace instantaneously. Simply take the output string of the previous command, and replace all spaces with commas.
 
-Boom! I now had a comma-separated list of flags for every single `.proto` file that I could directly use as `$(proto_opts)` in my Make target.
+Boom! I now have a comma-separated list of flags for every single `.proto` file that I can directly use as `$(proto_opts)` in my Make target.
 
 ## Bless you, proto.Message
 The next hiccup was dealing with 73 different struct types offered by each of the `.pb.go` files. There were a few ways to deal with this:
@@ -61,5 +61,73 @@ The solution to the second issue is just an extension of the first. Iterate over
         handler = &MagicName{}
 
 This works for 99% of the magics and their respective proto handlers. For the odd 1%, we can just add in the case manually.
+
+## Object-oriented nightmares
+A very common question that Go devs hear regularly - ***"Is Go object oriented?"***
+
+![Well yes, but actually no](yes-but-no.jpg)
+
+As a language, Go decided to keep the good parts of object-oriented programming while getting rid of the more cumbersome bits. This resulted in a unique (and sometimes weird) philosophy of idiomatic programming. Go does not have the concept of classes, it instead has *receiver functions*, where a function can be attached to a data type and called only by a variable of that specific type. This allows us to emulate classes (to an extent) by having some form of coupling between types and methods.
+
+Since there is no solid idea of a class, composition is used over inheritance. This is done through *struct embedding*. Just add your child struct type inside the parent struct, **without adding a field name**. The child struct members are now members of the parent struct too.
+
+    type Child struct {
+        A int
+        B string
+    }
+
+    type Parent struct {
+        Child
+        // Now, a and b are available as Parent.a and Parent.b
+        C int
+        D string
+    }
+
+But what about the child struct methods? This is where things get messy. The way method promotion is supposed to work is very obvious - all child methods are promoted to the parent, unless there is a namespace conflict; on conflict, the parent method is given priority over the child. But in Go, there is a third player - the default functions called when there is no custom implementation. `MarshalJSON()` is an excellent example of this. When `json.Marshal(<var>)` is called, Go looks for a `MarshalJSON()` receiver function implemented by the `<var>` type. If it does not exist, then it calls the default `MarshalJSON()` method. Continuing from the above code, try to guess what happens in the following situation:
+
+    func (c *Child) MarshalJSON() ([]byte, error) {
+        // Custom marshaling
+    }
+
+    func testMarshal() {
+        p := Parent{
+            A: 1,
+            B: "2",
+            C: 3,
+            D: "4",
+        }
+        j, err := json.Marshal(&p)
+        fmt.Println(string(j))
+    }
+
+You probably expected the output to look like
+
+    {
+        "A": "1",
+        "B": "2",
+        "C": "3",
+        "D": "4"
+    }
+
+But instead, the output looks like
+
+    {
+        "A": "1",
+        "B": "2"
+    }
+
+What? Where did the `C` and `D` fields go (heh, Go)? This is the issue that method promotion causes. Since `Child` has a custom `MarshalJSON()`, this is promoted to `Parent`, overriding the default `MarshalJSON()`. And clearly, `Child`'s marshaler has no clue about any struct members of `Parent` apart from its own.
+
+So how do we deal with this mess? One way would be to have a dummy marshaler for `Parent` which just calls the default method within.
+
+    func (p *Parent) MarshalJSON() ([]byte, error) {
+        // We need to use a type alias to prevent infinite
+        // function calls from json.Marshal to MarshalJSON
+        type Alias Parent
+        a = *Alias(p)
+        return json.Marshal(a)
+    }
+
+Bleh. Ugly. But it works, and is good enough if you're in a hurry. This issue has been around ever since struct embedding was introduced into the language, and is a bone of contention amongst developers (one guy wants to straight up [remove the feature](https://github.com/golang/go/issues/22013) from Go). This specific problem with JSON has been discussed at length in [this GitHub issue](https://github.com/golang/go/issues/30148).
 
 *This post will be sporadically updated until the end of the programme.*
