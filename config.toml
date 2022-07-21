@@ -33,9 +33,16 @@ name = 'Email'
 url = 'mailto:prajwalnadig21@gmail.com'
 
 [[menu.main]]
+name = 'Résumé'
+url = 'https://drive.google.com/file/d/1rRzWAJOFuwybtldbARxOEqQF_ybrYRx_/view?usp=sharing'
+weight = 1
+
+[[menu.main]]
 name = 'About'
 url = '/about/'
+weight = 2
 
 [[menu.main]]
 name = 'Blog'
 url = '/blog/'
+weight = 3
