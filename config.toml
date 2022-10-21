@@ -23,6 +23,11 @@ name = 'LinkedIn'
 url = 'https://linkedin.com/in/snprajwal'
 
 [[params.social]]
+icon = 'fa fa-twitter fa-2x'
+name = 'Twitter'
+url = 'https://twitter.com/prajwalnadig21'
+
+[[params.social]]
 icon = 'fa fa-instagram fa-2x'
 name = 'Instagram'
 url = 'https://instagram.com/snprajwal'
