@@ -2,7 +2,6 @@
 date = 2022-08-12T23:32:37+05:30
 title = "My journey with Google Summer of Code"
 tags = ['go', 'linux', 'systems']
-categories = ['Open Source', 'Programming']
 +++
 
 This article is a collection of journal entries along my journey as a contributor in Google Summer of Code 2022. This doesn't aim to be a detailed description of everything I did, but rather tries to give a general overview of how I got selected as a mentee, what I proposed to work on, and some of the golden nuggets of technical wisdom I managed to unearth while working on my project. Non-technical readers beware, you might have to keep a spare tab open to Google a fair amount of words that appear further :)
