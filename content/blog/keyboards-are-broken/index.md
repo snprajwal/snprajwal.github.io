@@ -1,6 +1,7 @@
 +++
 date = 2022-11-03T22:48:30+05:30
 title = "Your keyboard layout is broken"
+description = "Why QWERTY is a really bad idea"
 tags = ['random']
 +++
 
