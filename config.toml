@@ -1,4 +1,4 @@
-baseURL = 'https://snprajwal.github.io'
+baseURL = 'https://snprajwal.com'
 title = 'Prajwal S N'
 theme = 'hugo-coder'
 publishDir = 'build'

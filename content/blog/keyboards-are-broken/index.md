@@ -46,4 +46,4 @@ Fortunately, there exist solutions to all of these problems:
 - An ergonomic keyboard that is split into two individual units allows you to place your arms comfortably across the table at their natural angle, and saves your wrists from certain death.
 - An ortholinear keyboard (all rows aligned vertically) fixes the finger deviation issue.
 
-How many of these solutions do I use, you ask? I switched to Colemak when I noticed shoulder and wrist pain from long hours of typing. As for the remaining two points, keep an eye out for the next post ;)
+How many of these solutions do I use, you ask? I switched to Colemak when I noticed shoulder and wrist pain from long hours of typing. As for the remaining two points, keep an eye out for future posts ;)
