@@ -1,6 +1,7 @@
 +++
 date = 2022-08-12T23:32:37+05:30
-title = "My journey with Google Summer of Code"
+title = 'My journey with Google Summer of Code'
+description = 'The what, the how, and everything else you can ask'
 tags = ['go', 'linux', 'systems']
 +++
 

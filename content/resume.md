@@ -1,5 +1,6 @@
 +++
 title = 'Resume'
+description = 'View PDF'
 +++
 
 <meta http-equiv="refresh" content="0; url=https://drive.google.com/file/d/1rRzWAJOFuwybtldbARxOEqQF_ybrYRx_/view" />

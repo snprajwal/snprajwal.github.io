@@ -11,6 +11,9 @@ info = 'Renaissance man'
 avatarurl = '/images/snprajwal.jpg'
 since = 2022
 colorScheme = 'dark'
+# Open Graph params for link previews
+description = 'Renaissance man'
+images = ['/images/snprajwal.jpg']
 
 [[params.social]]
 icon = 'fa fa-github fa-2x'

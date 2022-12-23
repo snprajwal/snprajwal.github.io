@@ -1,8 +1,9 @@
 +++
 title = 'Who am I?'
+description = "That's an excellent question"
 +++
 
-To try and answer this in a way that will (hopefully) make you pause for a second before you close this tab is a tedious job, to say the least. But I will do my best.
+To try and answer this in a way that will (hopefully) make you pause for a second before you close this page is a tedious job, to say the least. But I will do my best.
 
 I am a distinct potpourri of seemingly random interests and abilities, which nonetheless tie together into a giant connected graph at some obscure level. I am a formally trained Karnatik classical vocalist and mridangam artist. Across the years, I have also picked up a motley assortment of other musical skills including the guitar and a wide range of percussion instruments (trust me to start drumming on *literally* anything I find in my vicinity). I am an origami artist, and love to surprise people with a pocket-sized bookmark or tessellation when I meet them (you can find my foldings on my [Instagram](https://instagram.com/snprajwal) page). In my school and college days, you would usually spot me fiddling with a Rubik's cube at any given point of time (the friends who managed to tolerate me can attest to this), and I can proudly claim a personal best of 6.63 seconds to solve the 3x3 cube. As an insufferable memelord, you can expect me to spice up conversations with witty puns, subtle jokes, and the occasional ridiculous meme from the depths of Reddit.
 
