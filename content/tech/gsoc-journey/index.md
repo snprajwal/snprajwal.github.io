@@ -5,7 +5,7 @@ description = 'The what, the how, and everything else you can ask'
 tags = ['go', 'linux', 'systems']
 +++
 
-This article is a collection of journal entries along my journey as a contributor in Google Summer of Code 2022. This doesn't aim to be a detailed description of everything I did, but rather tries to give a general overview of how I got selected as a mentee, what I proposed to work on, and some of the golden nuggets of technical wisdom I managed to unearth while working on my project. Non-technical readers beware, you might have to keep a spare tab open to Google a fair amount of words that appear further :)
+This article is a collection of journal entries along my journey as a contributor in Google Summer of Code 2022. This doesn't aim to be a detailed description of everything I did, but rather tries to give a general overview of how I got selected as a mentee, what I proposed to work on, and some of the golden nuggets of technical wisdom I managed to unearth while working on my project.
 
 # Que¿ What is this?
 
@@ -31,11 +31,13 @@ The first speedbreaker was generating all the `.pb.go` files with the protobuf b
 
 By harnessing the power of GNU Make, I was able to achieve this with just two operations and a few variables :)
 
-    import_path := github.com/checkpoint-restore/go-criu/crit/images
-    proto_path := ./images
-    proto_files := $(sort $(subst $(proto_path)/,,$(wildcard $(proto_path)/*.proto)))
-    comma := ,
-    proto_opts := $(subst $() $(),$(comma),$(patsubst %,M%=$(import_path),$(proto_files)))
+```make
+import_path := github.com/checkpoint-restore/go-criu/crit/images
+proto_path := ./images
+proto_files := $(sort $(subst $(proto_path)/,,$(wildcard $(proto_path)/*.proto)))
+comma := ,
+proto_opts := $(subst $() $(),$(comma),$(patsubst %,M%=$(import_path),$(proto_files)))
+```
 
 Let me explain what is going on here:
 
@@ -61,85 +63,28 @@ A better solution was necessary. After a little bit of hunting in the protobuf d
 
 Great, we solved the issue regarding the different struct types. Now comes the problem of identifying which type to assign for which image. The hexadecimal value used by CRIU to identify the type of an image is called *magic*. `criu` provides a `magic.h` file with a set of definitions that look like `#define MAGIC_NAME MAGIC_VALUE`. The best way to do this in Go would be to use a map of strings to integers (octal, hex, decimal, they all eventually represent numbers). But how to populate this map? And how can we use it to assign the right struct type to a generic `proto.Message` variable? The answer to both questions is metaprogramming - code that generates more code. Noice!
 
-To solve the first issue, we can write a Go script to parse `magic.h`, identify lines in the required format, and generate a `magic.go` file that creates and populates a `map[string]uint64` with all the parsed values. Go provides `fmt.Fprintf`, which conveniently lets us generate formatted strings and write them to a file. You can find my script [here](https://github.com/checkpoint-restore/go-criu/blob/master/scripts/magicgen.go).
+To solve the first issue, we can write a Go script to parse `magic.h`, identify lines in the required format, and generate a `magic.go` file that creates and populates a `map[string]uint64` with all the parsed values. Go provides `fmt.Fprintf`, which conveniently lets us generate formatted strings and write them to a file. You can find my script [here](https://github.com/checkpoint-restore/go-criu/blob/651dba98d91c96f45b8bfe20c36becbc321836b5/scripts/magicgen.go).
 
-The solution to the second issue is just an extension of the first. Iterate over the map of magic values, and generate a switch statement for each magic like below:
+The solution to the second issue is just an extension of the first. Iterate over the map of magic values and generate a switch case for each magic, resulting in something like this:
 
-    case "MAGIC_NAME":
-        handler = &MagicName{}
+```go
+func ProtoHandler(magic string) (proto.Message, error) {
+    switch magic {
+        case "MAGIC_ONE":
+            handler = &MagicOne{}
+        case "MAGIC_TWO":
+            handler = &MagicTwo{}
+        // ...
+        // Similar cases for all other magics
+    }
+}
+```
 
 This works for 99% of the magics and their respective proto handlers. For the odd 1%, we can just add in the case manually.
 
 ## Object-oriented nightmares
 
-A very common question that Go devs hear regularly - ***"Is Go object oriented?"***
-
-<p style="text-align:center">
-<img alt="Well yes, but actually no" src="./yes-but-no.jpg" width="60%" height="60%" />
-<p/>
-
-As a language, Go decided to keep the good parts of object-oriented programming while getting rid of the more cumbersome bits. This resulted in a unique (and sometimes weird) philosophy of idiomatic programming. Go does not have the concept of classes, it instead has *receiver functions*, where a function can be attached to a data type and called only by a variable of that specific type. This allows us to emulate classes (to an extent) by having some form of coupling between types and methods.
-
-Since there is no solid idea of a class, composition is used over inheritance. This is done through *struct embedding*. Just add your child struct type inside the parent struct, **without adding a field name**. The child struct members are now members of the parent struct too.
-
-    type Child struct {
-        A int
-        B string
-    }
-
-    type Parent struct {
-        Child
-        // Now, a and b are available as Parent.a and Parent.b
-        C int
-        D string
-    }
-
-But what about the child struct methods? This is where things get messy. The way method promotion is supposed to work is very obvious - all child methods are promoted to the parent, unless there is a namespace conflict; on conflict, the parent method is given priority over the child. But in Go, there is a third player - the default functions called when there is no custom implementation. `MarshalJSON()` is an excellent example of this. When `json.Marshal(<var>)` is called, Go looks for a `MarshalJSON()` receiver function implemented by the `<var>` type. If it does not exist, then it calls the default `MarshalJSON()` method. Continuing from the above code, try to guess what happens in the following situation:
-
-    func (c *Child) MarshalJSON() ([]byte, error) {
-        // Custom marshaling
-    }
-
-    func testMarshal() {
-        p := Parent{
-            A: 1,
-            B: "2",
-            C: 3,
-            D: "4",
-        }
-        j, err := json.Marshal(&p)
-        fmt.Println(string(j))
-    }
-
-You probably expected the output to look like
-
-    {
-        "A": "1",
-        "B": "2",
-        "C": "3",
-        "D": "4"
-    }
-
-But instead, the output looks like
-
-    {
-        "A": "1",
-        "B": "2"
-    }
-
-What? Where did the `C` and `D` fields go (heh, Go)? This is the issue that method promotion causes. Since `Child` has a custom `MarshalJSON()`, this is promoted to `Parent`, overriding the default `MarshalJSON()`. And clearly, `Child`'s marshaler has no clue about any struct members of `Parent` apart from its own.
-
-So how do we deal with this mess? One way would be to have a dummy marshaler for `Parent` which just calls the default method within.
-
-    func (p *Parent) MarshalJSON() ([]byte, error) {
-        // We need to use a type alias to prevent infinite
-        // function calls from json.Marshal to MarshalJSON
-        type Alias Parent
-        a = *Alias(p)
-        return json.Marshal(a)
-    }
-
-Bleh. Ugly. But it works, and is good enough if you're in a hurry. This issue has been around ever since struct embedding was introduced into the language, and is a bone of contention amongst developers (this one dude wants to straight up [remove the feature](https://github.com/golang/go/issues/22013) from Go). This specific problem with JSON has been discussed at length in [this GitHub issue](https://github.com/golang/go/issues/30148).
+Go doesn't have classes. Instead, it has structs with receiver functions that act like class methods. What about inheritance? Go tries to answer this with a concept called struct embedding, and creates a chaotic mess with bizzarely unintuitive behaviour that takes forever to debug. In fact, this topic is bad enough to deserve its own post. You can read about it in detail [here](https://snprajwal.com/tech/custom-marshalers-in-go).
 
 ## :s/.\*[Rr]eg(ular)?\s?([Ee]x)((press)ions)?.\*/\2\4way to hell
 
@@ -150,17 +95,17 @@ But no. If you know enough to decipher that phrase, you most likely don't share 
 Regex has got to be one of the coolest innovations on this planet. For most people, writing regex is a real-life horror story - you just can't seem to get it right, and when you finally think you've nailed it, you break production :/ But if you learn it correctly, you join the pantheon of programming gods as a minor diety of pattern matching :)
 
 <p style="text-align:center">
-<img alt="Feeling of power" src="./regex.jpeg" width="60%" height="60%" />
+  <img alt="Feeling of power" src="./regex.jpeg" height="70%" width="70%" />
 <p/>
 
 The E2E(end-to-end) and integration test for library use the image files from a dumped process to test if everything is working fine. In the process of doing this, they generate certain temporary files with the same extension.
 
-* ***What we have***: A `test-imgs` directory with:
+* **What we have**: A `test-imgs` directory with:
     * `.img` files generated by CRIU
     * `.test.img` files generated by the integration test
     * `.json`, `.json.img`, `tmp.XXXXXXXXXX.json`, and `tmp.XXXXXXXXXX.img` files generated by the E2E test
 
-* ***What we want***: A list of `.img` CRIU files, without the other `.img` files
+* **What we want**: A list of `.img` CRIU files, without the other `.img` files
 
 Clearly, we cannot use `ls test-imgs/*.img` as we will end up listing the files generated by the tests with the original ones. So how do we retrieve only the original image files to use for testing? Simple - just write a regular expression to match the files having a **single** period(`.`) in the name!
 

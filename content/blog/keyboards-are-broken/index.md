@@ -2,7 +2,7 @@
 date = 2022-11-03T22:48:30+05:30
 title = "Your keyboard layout is broken"
 description = "Why QWERTY is a really bad idea"
-tags = ['random']
+tags = ['keyboards', 'random']
 +++
 
 If you're like most people, you have a very normal, ordinary keyboard. Nothing fancy. Or maybe you have a mildly abnormal, slightly fancier, and hella lot more expensive keyboard (Hello, [r/MechanicalKeyboards](https://reddit.com/r/mechanicalkeyboards)).

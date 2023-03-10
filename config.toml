@@ -2,8 +2,12 @@ baseURL = 'https://snprajwal.com'
 title = 'Prajwal S N'
 theme = 'hugo-coder'
 publishDir = 'build'
+
 [markup.goldmark.renderer]
 unsafe = true
+
+[markup.highlight]
+style = 'gruvbox'
 
 [params]
 author = 'Prajwal S N'
@@ -14,6 +18,8 @@ colorScheme = 'dark'
 # Open Graph params for link previews
 description = 'Renaissance man'
 images = ['/images/snprajwal.jpg']
+# SEO keywords for home page
+keywords = 'prajwal,snprajwal,prajwalsn,prajwal s n,prajwalnadig,prajwalnadig21,prajwal nadig'
 
 [[params.social]]
 icon = 'fa fa-github fa-2x'
@@ -28,7 +34,7 @@ url = 'https://linkedin.com/in/snprajwal'
 [[params.social]]
 icon = 'fa fa-twitter fa-2x'
 name = 'Twitter'
-url = 'https://twitter.com/prajwalnadig21'
+url = 'https://twitter.com/_snprajwal'
 
 [[params.social]]
 icon = 'fa fa-instagram fa-2x'
