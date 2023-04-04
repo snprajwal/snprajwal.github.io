@@ -1,19 +1,19 @@
 +++
 date = 2022-11-03T22:48:30+05:30
-title = "Your keyboard layout is broken"
-description = "Why QWERTY is a really bad idea"
+title = 'Your keyboard layout is broken'
+description = 'Why QWERTY is a really bad idea'
 tags = ['keyboards', 'random']
 +++
 
 If you're like most people, you have a very normal, ordinary keyboard. Nothing fancy. Or maybe you have a mildly abnormal, slightly fancier, and hella lot more expensive keyboard (Hello, [r/MechanicalKeyboards](https://reddit.com/r/mechanicalkeyboards)).
 
 <p style="text-align:center">
-<figure>
-<img alt="Meme man with gaming rig" src="./clic-clac.webp" width="60%" height="60%" />
-<figcaption style="font-style:italic;font-size:80%;">
-Source: <a href="https://www.reddit.com/r/pcmasterrace/comments/h9phu4/clic_clac/">r/pcmasterrace</a>
-</figcaption>
-</figure>
+  <figure>
+    <img alt="Meme man with gaming rig" src="./clic-clac.webp" width="80%" height="80%" />
+    <figcaption style="font-style:italic;font-size:80%;">
+      Source: <a href="https://www.reddit.com/r/pcmasterrace/comments/h9phu4/clic_clac/">r/pcmasterrace</a>
+    </figcaption>
+  </figure>
 </p>
 
 Either way, all of them follow the same fundamental design - there are multiple rows of keys, with each successive row staggered towards the right, and one of these rows starts with the very familiar QWERTY sequence that makes you wonder what kind of drugs the designer was high on while arranging the letters. But have you ever questioned *why* your keyboard is the way it is?
@@ -23,7 +23,7 @@ Either way, all of them follow the same fundamental design - there are multiple 
 The first Remington typewriter was produced on March 1, 1873. It introduced the QWERTY keyboard to the world, and was a raging success, setting a precedent for every single typewriter that followed. If you take a look at an image of a conventional typewriter, the reason for one of the oddities becomes fairly obvious:
 
 <p style="text-align:center">
-<img alt="Typewriter" src="./typewriter.jpg" width="60%" height="60%" />
+  <img alt="Typewriter" src="./typewriter.jpg" width="80%" height="80%" />
 </p>
 
 Every key is connected to an arm, which in turn acts as a lever and raises the typebar for the respective character. Naturally, these arms cannot overlap, which led to every row being slightly offset against the one above it.

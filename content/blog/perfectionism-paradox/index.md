@@ -14,7 +14,7 @@ And you're perfectly (heh) right - all three of them hold good in the real world
 Picture this - you've just been given the opportunity to do something you've never done before. You have a brief idea of the what and the how, but you lack the specifics since it's your first time (or if you're a wiki-explorer like me, you might even know the entire thing theoretically from head to toe). What do you think you'll do?
 
 <p style="text-align:center">
-<img alt="Pingu now I'm not doing it" src="./pingu-meme.jpg" width="60%" height="60%" />
+  <img alt="Pingu now I'm not doing it" src="./pingu-meme.jpg" width="80%" height="80%" />
 </p>
 
 If you're a perfectionist, you're most likely going to bail. Or you may take it on, and find all sorts of excuses to not carry it to completion. The point is that your fear of producing a result that is not one hundred percent ideal overrides your decision-making process. If you're not going to do it perfectly the first time, you'd much rather not do it at all. Why should you settle for a mediocre attempt when you're clearly capable of doing an exemplary job? Time to introduce you to the paradox.
