@@ -5,7 +5,7 @@ description = "Ergonomics, productivity, and style - all at once ;)"
 tags = ['keyboards', 'random']
 +++
 
-Recently, I [wrote a blog](https://snprajwal.com/blog/keyboards-are-broken) explaining why I use Colemak. But I didn't stop there - I wanted to build the most ergonomic and mind-blowingly efficient keyboard out there. And it had to be *aesthetic*, because who wants to type on a janky piece of plastic all day?
+Recently, I [wrote a blog](/blog/keyboards-are-broken) explaining why I use Colemak. But I didn't stop there - I wanted to build the most ergonomic and mind-blowingly efficient keyboard out there. And it had to be *aesthetic*, because who wants to type on a janky piece of plastic all day?
 
 # Who said there's just one piece
 
