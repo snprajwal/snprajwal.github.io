@@ -1,5 +1,5 @@
 +++
-title = 'Resume'
+title = "Prajwal S N's résumé"
 description = 'View PDF'
 +++
 
