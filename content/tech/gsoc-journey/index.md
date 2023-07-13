@@ -84,7 +84,7 @@ This works for 99% of the magics and their respective proto handlers. For the od
 
 ## Object-oriented nightmares
 
-Go doesn't have classes. Instead, it has structs with receiver functions that act like class methods. What about inheritance? Go tries to answer this with a concept called struct embedding, and creates a chaotic mess with bizzarely unintuitive behaviour that takes forever to debug. In fact, this topic is bad enough to deserve its own post. You can read about it in detail [here](https://snprajwal.com/tech/custom-marshalers-in-go).
+Go doesn't have classes. Instead, it has structs with receiver functions that act like class methods. What about inheritance? Go tries to answer this with a concept called struct embedding, and creates a chaotic mess with bizzarely unintuitive behaviour that takes forever to debug. In fact, this topic is bad enough to deserve its own post. You can read about it in detail [here](/tech/custom-marshalers-in-go).
 
 ## :s/.\*[Rr]eg(ular)?\s?([Ee]x)((press)ions)?.\*/\2\4way to hell
 

@@ -32,11 +32,6 @@ name = 'LinkedIn'
 url = 'https://linkedin.com/in/snprajwal'
 
 [[params.social]]
-icon = 'fa fa-instagram fa-2x'
-name = 'Instagram'
-url = 'https://instagram.com/snprajwal'
-
-[[params.social]]
 icon = 'fa fa-envelope fa-2x'
 name = 'Email'
 url = 'mailto:prajwalnadig21@gmail.com'
