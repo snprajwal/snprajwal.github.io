@@ -1,0 +1,1 @@
+Until recently, I was using my Instagram account to share my origami. I have deleted that account, and am yet to get around to hosting my artwork elsewhere. Soon, you will either find it on this page, or be redirected to a Flickr account :) Sorry for the delay!
