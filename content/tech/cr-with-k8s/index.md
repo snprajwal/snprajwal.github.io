@@ -11,6 +11,6 @@ tags = ['talks']
 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/JEcLoJjH3Ls" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 </p>
 
-In case you're too lazy (or busy) to watch the entire video, you can scrub through the slides [here](/cr-with-k8s-slides).
+In case you're too lazy (or busy) to watch the entire video, you can scrub through the slides [here](/slides/dot-meetup-k8s-2023).
 
 If you have any questions or would like to discuss more on this topic, drop a comment on the video, or send me an email!
