@@ -1,1 +1,13 @@
-Until recently, I was using my Instagram account to share my origami. I have deleted that account, and am yet to get around to hosting my artwork elsewhere. Soon, you will either find it on this page, or be redirected to a Flickr account :) Sorry for the delay!
++++
+title = 'Origami'
+description = "Unlocking the power of paper squares"
++++
+
+*In life, we all start out as a piece of paper; you decide what you fold yourself into.*\
+***– Yours truly***
+
+Scroll below for some ideas :P
+
+---
+
+{{< gallery dir="/origami" />}} {{< load-photoswipe >}}
