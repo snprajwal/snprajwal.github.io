@@ -37,7 +37,7 @@ Documentation and licence at https://github.com/liwenyip/hugo-easy-gallery/
 			<div class="img"
 				style="background-image: url('{{ if $thumbexists }}{{ $thumbURL }}{{ else }}{{ $linkURL }}{{ end }}');">
 				<img itemprop="thumbnail" src="{{ if $thumbexists }}{{ $thumbURL }}{{ else }}{{ $linkURL }}{{ end }}"
-					alt="{{ $caption }}" loading=lazy /><!-- <img> hidden if in .gallery -->
+					alt="{{ $caption }}" loading="lazy" /><!-- <img> hidden if in .gallery -->
 			</div>
 			<figcaption>
 				<p>{{ $caption }}</p>
