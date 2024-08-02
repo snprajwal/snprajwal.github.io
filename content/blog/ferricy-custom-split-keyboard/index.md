@@ -2,7 +2,7 @@
 date = 2023-04-06T18:32:35+05:30
 title = "Ferricy: Building a custom 34-key split keyboard"
 description = "Ergonomics, productivity, and style - all at once ;)"
-tags = ['keyboards', 'random']
+tags = ['keyboards']
 +++
 
 Recently, I [wrote a blog](/blog/keyboards-are-broken) explaining why I use Colemak. But I didn't stop there - I wanted to build the most ergonomic and mind-blowingly efficient keyboard out there. And it had to be *aesthetic*, because who wants to type on a janky piece of plastic all day?
