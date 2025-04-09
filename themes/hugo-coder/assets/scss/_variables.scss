@@ -8,6 +8,7 @@ Ubuntu,
 Cantarell,
 "Helvetica Neue",
 Helvetica,
+"游ゴシック",
 "PingFang SC",
 STXihei,"华文细黑",
 "Microsoft YaHei","微软雅黑",
@@ -31,7 +32,7 @@ $link-color: #1565c0 !default;
 // Dark colors
 $bg-color-dark: #212121 !default;
 $fg-color-dark: #dadada !default;
-$alt-bg-color-dark: #282828 !default;
+$alt-bg-color-dark: #424242 !default;
 $alt-fg-color-dark: #dadada !default;
 $lighter-alt-bg-color-dark: #4f4f4f !default;
 $link-color-dark: #42a5f5 !default;
@@ -58,3 +59,6 @@ $bg-color-notice-warning-content: #ffca281a !default;
 $fg-color-notice-error-icon: #e53935 !default;
 $bg-color-notice-error-title: #f443361a !default;
 $bg-color-notice-error-content: #ef53501a !default;
+
+// Path to FontAwesome TTF/WOFF files.
+$fa-font-path: "../fonts" !default;

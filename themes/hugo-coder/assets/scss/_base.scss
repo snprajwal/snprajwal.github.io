@@ -23,6 +23,10 @@ body {
   }
 }
 
+iframe[src*="disqus"] {
+  color-scheme: light;
+}
+
 a {
   font-weight: 500;
   color: $link-color;
@@ -37,6 +41,9 @@ a {
 
 p {
   margin: 2rem 0 2rem 0;
+  @media only screen and (max-width: 768px) {
+    margin: 1.5rem 0 1.5rem 0;
+  }
 }
 
 h1,
@@ -134,11 +141,14 @@ strong {
   font-weight: 700;
 }
 
-.highlight>div,
-.highlight>pre {
-  margin: 2rem 0 2rem;
-  padding: 1rem;
-  border-radius: 1rem;
+.highlight {
+  div,
+  pre {
+    margin: 2rem 0 2rem;
+    padding: 1rem;
+    border-radius: 1rem;
+    overflow-x: auto;
+  }
 }
 
 pre {
@@ -148,7 +158,9 @@ pre {
   font-weight: 400;
   line-height: 2.6rem;
   overflow-x: auto;
-  margin: 0;
+  margin: 2rem 0 2rem;
+  padding: 1rem;
+  border-radius: 1rem;
 
   code {
     display: inline-block;
@@ -161,10 +173,13 @@ code {
   font-family: $code-font-family;
   font-size: 1.6rem;
   font-weight: 400;
-  background-color: $alt-bg-color;
-  color: $fg-color;
   border-radius: 0.6rem;
   padding: 0.3rem 0.6rem;
+  background-color: $darker-alt-bg-color;
+  color: $fg-color;
+  @media only screen and (max-width: 768px) {
+    font-size: 1.5rem;
+  }
 }
 
 blockquote {
@@ -173,6 +188,9 @@ blockquote {
   line-height: 2.2rem;
   font-weight: 400;
   font-style: italic;
+}
+* {
+  -webkit-tap-highlight-color: transparent;
 }
 
 th,
@@ -189,12 +207,36 @@ table th {
   border: 2px solid $alt-fg-color;
 }
 
+table tr:first-child th {
+  border-top: 0;
+}
+
+table tr:last-child td {
+  border-bottom: 0;
+}
+
+table tr td:first-child,
+table tr th:first-child {
+  border-left: 0;
+}
+
+table tr td:last-child,
+table tr th:last-child {
+  border-right: 0;
+}
+
 img {
   max-width: 100%;
 }
 
 figure {
   text-align: center;
+}
+
+.footnotes {
+  ol li p {
+    margin: 0;
+  }
 }
 
 .preload-transitions * {
