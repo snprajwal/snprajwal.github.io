@@ -1,4 +1,13 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>compilers on Prajwal S N</title><link>https://snprajwal.com/tags/compilers/</link><description>Recent content in compilers on Prajwal S N</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Tue, 07 Mar 2023 21:12:14 +0530</lastBuildDate><atom:link href="https://snprajwal.com/tags/compilers/index.xml" rel="self" type="application/rss+xml"/><item><title>Custom marshalers in Go: An unexpected gotcha</title><link>https://snprajwal.com/tech/custom-marshalers-in-go/</link><pubDate>Tue, 07 Mar 2023 21:12:14 +0530</pubDate><guid>https://snprajwal.com/tech/custom-marshalers-in-go/</guid><description>There&amp;rsquo;s a very common question that Go devs hear regularly - “Is Go object oriented?”
-And the answer?
-Source: Know Your Meme This is what the Go FAQ has to say about this:
-Yes and no. Although Go has types and methods and allows an object-oriented style of programming, there is no type hierarchy. The concept of “interface” in Go provides a different approach that we believe is easy to use and in some ways more general.</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Compilers on Prajwal S N</title><link>https://snprajwal.com/tags/compilers/</link><description>Recent content in Compilers on Prajwal S N</description><generator>Hugo</generator><language>en</language><lastBuildDate>Tue, 07 Mar 2023 21:12:14 +0530</lastBuildDate><atom:link href="https://snprajwal.com/tags/compilers/index.xml" rel="self" type="application/rss+xml"/><item><title>Custom marshalers in Go: An unexpected gotcha</title><link>https://snprajwal.com/tech/custom-marshalers-in-go/</link><pubDate>Tue, 07 Mar 2023 21:12:14 +0530</pubDate><guid>https://snprajwal.com/tech/custom-marshalers-in-go/</guid><description>&lt;p>There&amp;rsquo;s a very common question that Go devs hear regularly - &lt;strong>&lt;em>“Is Go object oriented?”&lt;/em>&lt;/strong>&lt;/p>
+&lt;p>And the answer?&lt;/p>
+&lt;p style="text-align:center">
+ &lt;figure>
+ &lt;img alt="Well yes, but no" src="./yes-but-no.jpg" height="70%" width="70%" />
+ &lt;figcaption style="font-style:italic;font-size:80%;">
+ Source: &lt;a href="https://knowyourmeme.com/memes/well-yes-but-actually-no">Know Your Meme&lt;/a>
+ &lt;/figcaption>
+ &lt;/figure>
+&lt;/p>
+&lt;p>This is what the &lt;a href="https://go.dev/doc/faq#Is_Go_an_object-oriented_language" class="external-link" target="_blank" rel="noopener">Go FAQ&lt;/a> has to say about this:&lt;/p>
+&lt;blockquote>
+&lt;p>Yes and no. Although Go has types and methods and allows an object-oriented style of programming, there is no type hierarchy. The concept of “interface” in Go provides a different approach that we believe is easy to use and in some ways more general. There are also ways to embed types in other types to provide something analogous—but not identical—to subclassing. Moreover, methods in Go are more general than in C++ or Java: they can be defined for any sort of data, even built-in types such as plain, “unboxed” integers. They are not restricted to structs (classes).&lt;/p></description></item></channel></rss>
