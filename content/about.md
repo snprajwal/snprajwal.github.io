@@ -10,7 +10,7 @@ I am a distinct potpourri of seemingly random interests and abilities, which non
 - **Music**: I am a formally trained Indian classical vocalist and percussionist (trust me to start drumming on *literally* anything I find in my vicinity). Across the years, I've also picked up a motley assortment of other instruments including the guitar and flute. I love blues and rock from the 1970s and 80s.
 - **Origami**: My chosen form of meditation. You can see some of my works [here](/folds). I also like to surprise people with a pocket-sized bookmark or tessellation when I meet them.
 - **Climbing mountains**: I've hiked across a sizeable chunk of the Alps in France, Switzerland, and Austria. I've also done multi-day treks in the western parts of the Himalayas.
-- **Paragliding**: I am a certified paraglider, and have done a number of flights in Bir Billing - a pair of quiet towns in the Himalayas at 2400m above sea level.
+- **Paragliding**: I am a certified paragliding pilot, and have flown a number of times in Bir Billing - a pair of quiet towns in the Himalayas at 2400m above sea level.
 - **Cycling**: I've had the pleasure of doing some long-distance cycling across the French and Swiss countryside near Geneva. I also cycle regularly in and around London.
 - **Speedcubing**: In my school and college days, you could spot me fiddling with a Rubik's cube at all times. I can proudly claim a personal best of 6.63 seconds to solve the standard 3x3 cube. For anyone interested, my current main is the MoYu Super RS3M Maglev (past mains include the YuXin HuangLong and the GuoGuan YueXiao).
 
