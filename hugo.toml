@@ -22,9 +22,9 @@ images = ['/images/snprajwal.jpg']
 keywords = 'prajwal,snprajwal,prajwalsn,prajwal s n,prajwalnadig,prajwalnadig21,prajwal nadig'
 
 [[params.social]]
-icon = 'fa fa-github fa-2x'
-name = 'GitHub'
-url = 'https://github.com/snprajwal'
+icon = 'fa fa-envelope fa-2x'
+name = 'Email'
+url = 'mailto:prajwalnadig21@gmail.com'
 
 [[params.social]]
 icon = 'fa fa-linkedin fa-2x'
@@ -32,9 +32,9 @@ name = 'LinkedIn'
 url = 'https://linkedin.com/in/snprajwal'
 
 [[params.social]]
-icon = 'fa fa-envelope fa-2x'
-name = 'Email'
-url = 'mailto:prajwalnadig21@gmail.com'
+icon = 'fa fa-github fa-2x'
+name = 'GitHub'
+url = 'https://github.com/snprajwal'
 
 [[menu.main]]
 name = 'Résumé'

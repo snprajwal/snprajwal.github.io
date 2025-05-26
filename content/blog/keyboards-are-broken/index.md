@@ -5,7 +5,7 @@ description = 'Why QWERTY is a really bad idea'
 tags = ['keyboards']
 +++
 
-If you're like most people, you have a very normal, ordinary keyboard. Nothing fancy. Or maybe you have a mildly abnormal, slightly fancier, and hella lot more expensive keyboard (Hello, [r/MechanicalKeyboards](https://reddit.com/r/mechanicalkeyboards)).
+If you're like most people, you have a very normal, ordinary keyboard. Nothing fancy. Or maybe you have a mildly abnormal, slightly fancier, and hella more expensive keyboard (Hello, [r/MechanicalKeyboards](https://reddit.com/r/mechanicalkeyboards)).
 
 <p style="text-align:center">
   <figure>
@@ -37,7 +37,7 @@ Now that you know (to some extent) how a typewriter operates, we can proceed to 
 QWERTY was designed to solve a very specific set of problems, and it's good enough at that. The issue is that today, it's being used as a solution for these problems which doesn't exist anymore. Modern keyboards don't use jammable arms, they use a matrix of switches that send a high or low voltage signal when pressed. Staggered rows and separated bigrams don't serve any purpose other than making shoulder and wrist health a living hell for most users. Here's a few reasons why most keyboards suck:
 
 - Your hand sits on the home row by default, and hits an astonishingly small percentage of keys [(37%)](https://www.keybr.com/layouts). *Home row*? More like *home no*.
-- There is ulnar deviation at your wrists (bending them outwards) because you bring your arms towards the center of your body but angle your hands forwards instead of inwards. This is responsible for the notoriously common [Repetitive Strain Injury (RSI)](https://en.wikipedia.org/wiki/Repetitive_strain_injury), and is in fact common enough for Wikipedia to use a keyboard as the official image for this condition.
+- There is ulnar deviation at your wrists (bending them outwards) because you bring your arms towards the centre of your body but angle your hands forwards instead of inwards. This is responsible for the notoriously common [Repetitive Strain Injury (RSI)](https://en.wikipedia.org/wiki/Repetitive_strain_injury), and is in fact common enough for Wikipedia to use a keyboard as the official image for this condition.
 - Your fingers curl along their length, which means they deviate from their resting angle each time you jump to a different row. The staggered rows ensure that your fingers never remain in their natural state for more than a couple of keystrokes.
 
 Fortunately, there exist solutions to all of these problems:
