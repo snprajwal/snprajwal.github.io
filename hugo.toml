@@ -1,5 +1,5 @@
 baseURL = 'https://snprajwal.com'
-title = 'Prajwal S N'
+title = 'Prajwal Nadig'
 theme = 'hugo-coder'
 publishDir = 'build'
 
@@ -10,7 +10,7 @@ unsafe = true
 style = 'gruvbox'
 
 [params]
-author = 'Prajwal S N'
+author = 'Prajwal Nadig'
 info = 'Renaissance man'
 avatarurl = '/images/snprajwal.jpg'
 since = 2022
